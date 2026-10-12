@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Caches
+.uv-cache/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+
+# Data and model weights (not distributed)
+data/**/*.parquet
+data/**/*.csv
+data/**/*.xlsx
+*.ckpt
+*.pt
+*.pth
+

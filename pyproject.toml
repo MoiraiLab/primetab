@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "primetab"
+version = "0.1.0"
+description = "PrimeTab: cross-domain, in-context-learning driven interpretable pegRNA design with tabular foundation models"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = ["prime-editing", "pegRNA", "tabular-foundation-model", "TabPFN", "in-context-learning", "crispr"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+]
+dependencies = [
+    "numpy>=1.23.0",
+    "scipy>=1.9.0",
+    "scikit-learn>=1.2.0",
+    "pandas>=1.5.0",
+    "pyarrow>=16",
+    "openpyxl>=3.1",
+    "pyyaml>=6.0",
+    "biopython>=1.81",
+    "ViennaRNA>=2.6",
+    "requests>=2.28",
+]
+
+[project.optional-dependencies]
+tfm = [
+    "torch>=2.0.0",
+    "tabpfn>=8.0.8",
+]
+baselines = [
+    "xgboost>=1.7",
+]
+dev = [
+    "pytest>=7.0.0",
+    "ruff>=0.4",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["primetab*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
